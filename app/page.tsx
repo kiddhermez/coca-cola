@@ -7,6 +7,9 @@ export default function Home() {
             <button className="rounded-full bg-coke-accent py-3 px-6">
                 Añadir item
             </button>
+            <button className="rounded-full bg-coke-accent py-3 px-6  ">
+                Eliminar item.
+            </button>
         </div>
     </main>;
 }
