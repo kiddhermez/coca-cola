@@ -10,9 +10,9 @@ const config: Config = {
   extend:{
     colors:{
       coke:{
-        red: "#ee1e17",
-        black: "#000000",
-        white: "#ffffff",
+        accent: "#cc444b",
+        background: "#38040e",
+        foreground: "#edf2f4",
       }
     }
   }
