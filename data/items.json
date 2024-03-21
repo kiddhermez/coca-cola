@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "nombre": "Azúcar",
+    "tipo_de_item": "Materia Prima",
+    "color_del_item": "Blanco",
+    "cantidad": 100
+  },
+  {
+    "id": 2,
+    "nombre": "Agua",
+    "tipo_de_item": "Materia Prima",
+    "color_del_item": "Transparente",
+    "cantidad": 200
+  },
+  {
+    "id": 3,
+    "nombre": "Cafeína",
+    "tipo_de_item": "Materia Prima",
+    "color_del_item": "Blanco",
+    "cantidad": 5
+  },
+  {
+    "id": 4,
+    "nombre": "Colorante Caramelo",
+    "tipo_de_item": "Materia Prima",
+    "color_del_item": "Marrón",
+    "cantidad": 10
+  },
+  {
+    "id": 5,
+    "nombre": "Ácido Fosfórico",
+    "tipo_de_item": "Materia Prima",
+    "color_del_item": "Transparente",
+    "cantidad": 5
+  }
+]
