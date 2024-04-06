@@ -8,18 +8,30 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
-  theme: {
-    extend: {
-      colors: {
-        coke: {
-          accent: '#cc444b',
-          background: '#38040e',
-          foreground: '#edf2f4',
+  theme: {},
+  darkMode: 'class',
+  plugins: [
+    nextui({
+      themes: {
+        dark: {
+          colors: {
+            background: '#25232e',
+            foreground: '#fff',
+            primary: '#2e2323',
+            secondary: '#05f',
+          },
+        },
+        light: {
+          colors: {
+            background: '#fff',
+            foreground: '#000',
+            primary: '#0070f3',
+            secondary: '#05f',
+          },
         },
       },
-    },
-  },
-  darkMode: 'class',
-  plugins: [nextui(), require('tailwind-scrollbar')],
+    }),
+    require('tailwind-scrollbar'),
+  ],
 };
 export default config;
