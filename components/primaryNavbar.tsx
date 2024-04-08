@@ -7,6 +7,7 @@ import {
 import React from "react";
 import Logo from "./logo";
 import { Avatar } from "@nextui-org/react";
+import ChangeTheme from "./changeTheme";
 
 interface TopNavbarProps {
   actualSection: string;
@@ -15,8 +16,8 @@ interface TopNavbarProps {
 function PrimaryNavbar({ actualSection }: TopNavbarProps) {
   return (
     <Navbar>
-      <NavbarBrand>
-        <Logo className="fill-white" width={50} />
+      <NavbarBrand className="text-foreground">
+        <Logo className="fill-current" width={50} />
       </NavbarBrand>
       <NavbarContent justify="center">
         <NavbarItem>
@@ -26,6 +27,7 @@ function PrimaryNavbar({ actualSection }: TopNavbarProps) {
       <NavbarContent justify="end">
         <Avatar size="sm" />
         <p className="hidden md:flex">User</p>
+        <ChangeTheme />
       </NavbarContent>
     </Navbar>
   );
