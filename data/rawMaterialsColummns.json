@@ -1,0 +1,34 @@
+[
+  {
+    "key": "id",
+    "label": "ID"
+  },
+  {
+    "key": "name",
+    "label": "NAME"
+  },
+  {
+    "key": "description",
+    "label": "DESCRIPTION"
+  },
+  {
+    "key": "price",
+    "label": "PRICE"
+  },
+  {
+    "key": "quantity",
+    "label": "QUANTITY"
+  },
+  {
+    "key": "createdAt",
+    "label": "CREATED AT"
+  },
+  {
+    "key": "updatedAt",
+    "label": "UPDATED AT"
+  },
+  {
+    "key": "actions",
+    "label": "ACTIONS"
+  }
+]

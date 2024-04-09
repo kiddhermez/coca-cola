@@ -1,0 +1,182 @@
+[
+  {
+    "id": "1",
+    "name": "Raw Material 1",
+    "description": "Description for Raw Material 1",
+    "price": 10.5,
+    "quantity": 100,
+    "createdAt": "2024-04-08T12:00:00Z",
+    "updatedAt": "2024-04-08T12:00:00Z"
+  },
+  {
+    "id": "2",
+    "name": "Raw Material 2",
+    "description": "Description for Raw Material 2",
+    "price": 15.75,
+    "quantity": 150,
+    "createdAt": "2024-04-08T12:01:00Z",
+    "updatedAt": "2024-04-08T12:01:00Z"
+  },
+  {
+    "id": "3",
+    "name": "Raw Material 3",
+    "description": "Description for Raw Material 3",
+    "price": 20.0,
+    "quantity": 200,
+    "createdAt": "2024-04-08T12:02:00Z",
+    "updatedAt": "2024-04-08T12:02:00Z"
+  },
+  {
+    "id": "4",
+    "name": "Raw Material 4",
+    "description": "Description for Raw Material 4",
+    "price": 8.25,
+    "quantity": 75,
+    "createdAt": "2024-04-08T12:03:00Z",
+    "updatedAt": "2024-04-08T12:03:00Z"
+  },
+  {
+    "id": "5",
+    "name": "Raw Material 5",
+    "description": "Description for Raw Material 5",
+    "price": 12.0,
+    "quantity": 120,
+    "createdAt": "2024-04-08T12:04:00Z",
+    "updatedAt": "2024-04-08T12:04:00Z"
+  },
+  {
+    "id": "6",
+    "name": "Raw Material 6",
+    "description": "Description for Raw Material 6",
+    "price": 18.5,
+    "quantity": 180,
+    "createdAt": "2024-04-08T12:05:00Z",
+    "updatedAt": "2024-04-08T12:05:00Z"
+  },
+  {
+    "id": "7",
+    "name": "Raw Material 7",
+    "description": "Description for Raw Material 7",
+    "price": 22.75,
+    "quantity": 220,
+    "createdAt": "2024-04-08T12:06:00Z",
+    "updatedAt": "2024-04-08T12:06:00Z"
+  },
+  {
+    "id": "8",
+    "name": "Raw Material 8",
+    "description": "Description for Raw Material 8",
+    "price": 9.0,
+    "quantity": 80,
+    "createdAt": "2024-04-08T12:07:00Z",
+    "updatedAt": "2024-04-08T12:07:00Z"
+  },
+  {
+    "id": "9",
+    "name": "Raw Material 9",
+    "description": "Description for Raw Material 9",
+    "price": 14.25,
+    "quantity": 130,
+    "createdAt": "2024-04-08T12:08:00Z",
+    "updatedAt": "2024-04-08T12:08:00Z"
+  },
+  {
+    "id": "10",
+    "name": "Raw Material 10",
+    "description": "Description for Raw Material 10",
+    "price": 16.0,
+    "quantity": 160,
+    "createdAt": "2024-04-08T12:09:00Z",
+    "updatedAt": "2024-04-08T12:09:00Z"
+  },
+  {
+    "id": "11",
+    "name": "Raw Material 11",
+    "description": "Description for Raw Material 11",
+    "price": 11.5,
+    "quantity": 110,
+    "createdAt": "2024-04-08T12:10:00Z",
+    "updatedAt": "2024-04-08T12:10:00Z"
+  },
+  {
+    "id": "12",
+    "name": "Raw Material 12",
+    "description": "Description for Raw Material 12",
+    "price": 19.75,
+    "quantity": 190,
+    "createdAt": "2024-04-08T12:11:00Z",
+    "updatedAt": "2024-04-08T12:11:00Z"
+  },
+  {
+    "id": "13",
+    "name": "Raw Material 13",
+    "description": "Description for Raw Material 13",
+    "price": 21.0,
+    "quantity": 210,
+    "createdAt": "2024-04-08T12:12:00Z",
+    "updatedAt": "2024-04-08T12:12:00Z"
+  },
+  {
+    "id": "14",
+    "name": "Raw Material 14",
+    "description": "Description for Raw Material 14",
+    "price": 7.75,
+    "quantity": 70,
+    "createdAt": "2024-04-08T12:13:00Z",
+    "updatedAt": "2024-04-08T12:13:00Z"
+  },
+  {
+    "id": "15",
+    "name": "Raw Material 15",
+    "description": "Description for Raw Material 15",
+    "price": 13.0,
+    "quantity": 140,
+    "createdAt": "2024-04-08T12:14:00Z",
+    "updatedAt": "2024-04-08T12:14:00Z"
+  },
+  {
+    "id": "16",
+    "name": "Raw Material 16",
+    "description": "Description for Raw Material 16",
+    "price": 17.5,
+    "quantity": 170,
+    "createdAt": "2024-04-08T12:15:00Z",
+    "updatedAt": "2024-04-08T12:15:00Z"
+  },
+  {
+    "id": "17",
+    "name": "Raw Material 17",
+    "description": "Description for Raw Material 17",
+    "price": 23.25,
+    "quantity": 230,
+    "createdAt": "2024-04-08T12:16:00Z",
+    "updatedAt": "2024-04-08T12:16:00Z"
+  },
+  {
+    "id": "18",
+    "name": "Raw Material 18",
+    "description": "Description for Raw Material 18",
+    "price": 8.5,
+    "quantity": 90,
+    "createdAt": "2024-04-08T12:17:00Z",
+    "updatedAt": "2024-04-08T12:17:00Z"
+  },
+  {
+    "id": "19",
+    "name": "Raw Material 19",
+    "description": "Description for Raw Material 19",
+    "price": 15.25,
+    "quantity": 170,
+    "createdAt": "2024-04-08T12:18:00Z",
+    "updatedAt": "2024-04-08T12:18:00Z"
+  },
+  {
+    "id": "20",
+    "name": "Raw Material 20",
+    "description": "Description for Raw Material 20",
+    "price": 18.0,
+    "quantity": 200,
+    "createdAt": "2024-04-08T12:19:00Z",
+    "updatedAt": "2024-04-08T12:19:00Z"
+  }
+]

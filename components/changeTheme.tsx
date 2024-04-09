@@ -19,11 +19,12 @@ function ChangeTheme() {
       className="bg-transparent text-foreground"
       isIconOnly
       onClick={changeTheme}
+      size="sm"
     >
       {theme === "light" ? (
-        <MoonIcon width={20} className="fill-current" />
+        <MoonIcon width={15} className="fill-current" />
       ) : (
-        <SunIcon width={20} className="fill-current" />
+        <SunIcon width={15} className="fill-current" />
       )}
     </Button>
   );

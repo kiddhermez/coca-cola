@@ -1,4 +1,5 @@
-import { Navbar, NavbarContent, NavbarItem } from "@nextui-org/navbar";
+"use client";
+import { Navbar, NavbarContent } from "@nextui-org/navbar";
 import React from "react";
 import {
   InventoryIcon,
@@ -7,47 +8,39 @@ import {
   TransportIcon,
 } from "./icons";
 import { Tooltip } from "@nextui-org/tooltip";
+import { Button } from "@nextui-org/button";
+import categories from "../json/categories.json";
 
-function SecondaryNavbar() {
+interface SecondaryNavbarProps {
+  setActualSection: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const icons: { [key: string]: React.JSX.Element } = {
+  Inventario: <InventoryIcon className="fill-current opacity-70" width={30} />,
+  Empleados: <EmployeeIcon className="fill-current opacity-70" width={30} />,
+  Proveedores: <ProviderIcon className="fill-current opacity-70" width={30} />,
+  Transporte: <TransportIcon className="fill-current opacity-70" width={30} />,
+};
+
+function SecondaryNavbar({ setActualSection }: SecondaryNavbarProps) {
   return (
     <Navbar
-      className="flex flex-row px-5 md:w-16 md:flex-col md:py-10"
+      className="flex flex-row px-5 md:h-full md:w-16 md:flex-col md:py-10"
       classNames={{
         wrapper: "flex flex-row md:justify-between md:h-full md:flex-col",
       }}
     >
-      <Tooltip content="Inventario">
-        <NavbarContent
-          justify="center"
-          className="h-[40px] w-[40px] rounded-full text-foreground hover:cursor-pointer hover:bg-foreground/70 hover:text-primary"
-        >
-          <InventoryIcon className="fill-current opacity-70" width={30} />
-        </NavbarContent>
-      </Tooltip>
-      <Tooltip content="Proveedores">
-        <NavbarContent
-          justify="center"
-          className="h-[40px] w-[40px] rounded-full text-foreground hover:cursor-pointer hover:bg-foreground/70 hover:text-primary"
-        >
-          <ProviderIcon className="fill-current opacity-70" width={27} />
-        </NavbarContent>
-      </Tooltip>
-      <Tooltip content="Transporte">
-        <NavbarContent
-          justify="center"
-          className="h-[40px] w-[40px] rounded-full text-foreground hover:cursor-pointer hover:bg-foreground/70 hover:text-primary"
-        >
-          <TransportIcon className="fill-current opacity-70" width={28} />
-        </NavbarContent>
-      </Tooltip>
-      <Tooltip content="Empleados">
-        <NavbarContent
-          justify="center"
-          className="h-[40px] w-[40px] rounded-full text-foreground hover:cursor-pointer hover:bg-foreground/70 hover:text-primary"
-        >
-          <EmployeeIcon className="fill-current opacity-70" width={20} />
-        </NavbarContent>
-      </Tooltip>
+      {categories.map((category) => (
+        <Tooltip key={category.name} content={category.name}>
+          <Button
+            onClick={() => setActualSection(category.name)}
+            isIconOnly
+            className="h-[40px] w-[40px] rounded-full bg-transparent text-foreground hover:cursor-pointer hover:bg-foreground/70 hover:text-primary"
+          >
+            {icons[category.name]}
+          </Button>
+        </Tooltip>
+      ))}
     </Navbar>
   );
 }
