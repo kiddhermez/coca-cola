@@ -10,6 +10,7 @@ import {
 import { Tooltip } from "@nextui-org/tooltip";
 import { Button } from "@nextui-org/button";
 import categories from "../json/categories.json";
+import { useActualList } from "@/states/actualList";
 
 interface SecondaryNavbarProps {
   setActualSection: React.Dispatch<React.SetStateAction<string>>;
@@ -22,7 +23,8 @@ const icons: { [key: string]: React.JSX.Element } = {
   Transporte: <TransportIcon className="fill-current opacity-70" width={30} />,
 };
 
-function SecondaryNavbar({ setActualSection }: SecondaryNavbarProps) {
+function SecondaryNavbar() {
+  const setActualList = useActualList((state) => state.setActualList);
   return (
     <Navbar
       className="flex flex-row px-5 md:h-full md:w-16 md:flex-col md:py-10"
@@ -33,7 +35,9 @@ function SecondaryNavbar({ setActualSection }: SecondaryNavbarProps) {
       {categories.map((category) => (
         <Tooltip key={category.name} content={category.name}>
           <Button
-            onClick={() => setActualSection(category.name)}
+            onClick={() =>
+              setActualList({ category: category.name, route: category.route })
+            }
             isIconOnly
             className="h-[40px] w-[40px] rounded-full bg-transparent text-foreground hover:cursor-pointer hover:bg-foreground/70 hover:text-primary"
           >

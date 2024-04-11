@@ -1,12 +1,18 @@
 import { create } from "zustand";
-import data from "../data/rawMaterials.json";
 
-interface actualListState<T> {
-  actualList: T[];
-  setActualList: (value: T) => void;
+export interface ActualListState {
+  actualCategory: string;
+  listRoute: string;
+  setActualList: (value: { category: string; route: string }) => void;
 }
 
-export const useActualList = create<actualListState<any>>((set) => ({
-  actualList: data,
-  setActualList: (value: any) => set({ actualList: value }),
+export const useActualList = create<ActualListState>((set) => ({
+  actualCategory: "Inventario",
+  listRoute: "rawMaterial",
+  setActualList: ({ category, route }) => {
+    set({
+      actualCategory: category,
+      listRoute: route,
+    });
+  },
 }));

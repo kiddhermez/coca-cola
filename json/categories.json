@@ -1,18 +1,22 @@
 [
   {
     "name": "Inventario",
-    "icon": "Inventpry"
+    "icon": "Inventory",
+    "route": "rawMaterial"
   },
   {
     "name": "Proveedores",
-    "icon": "Providers"
+    "icon": "Providers",
+    "route": "provider"
   },
   {
     "name": "Transporte",
-    "icon": "Transport"
+    "icon": "Transport",
+    "route": "transportist"
   },
   {
     "name": "Empleados",
-    "icon": "Employees"
+    "icon": "Employees",
+    "route": "employee"
   }
 ]

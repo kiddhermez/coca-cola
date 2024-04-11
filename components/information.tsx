@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useEffect, useState } from "react";
 import { Card, CardBody } from "@nextui-org/card";
 import {
   Table,
@@ -10,13 +10,13 @@ import {
   TableRow,
   getKeyValue,
 } from "@nextui-org/table";
+import axios from "axios";
 
 import { ConfigIcon, DeleteIcon, EditIcon } from "./icons";
 import MoreActionsButton from "./buttons/moreActionsButton";
 import { useActualList } from "@/states/actualList";
 import { useSearchTerm } from "@/states/searchTerm";
 import ActionsButton from "./buttons/actionsButton";
-import rawMaterialsColumns from "@/data/rawMaterialsColummns.json";
 
 const icons = [
   <ConfigIcon key={0} width={15} />,
@@ -25,17 +25,40 @@ const icons = [
 ];
 
 function Information() {
-  const rawData = useActualList((state) => state.actualList);
+  const [isLoading, setIsLoading] = useState(false);
+  const { listRoute } = useActualList((state) => state);
+  const [actualColumns, setActualColumns] = useState<any[]>([]);
+  const [actualList, setActualList] = useState<any[]>([]);
+
+  console.log(listRoute);
+
+  useEffect(() => {
+    async function fetchData() {
+      const {
+        data: {
+          result: { data },
+        },
+      } = await axios.get(`/api/${listRoute}`);
+      console.log(data);
+
+      const {
+        data: { result },
+      } = await axios.get(`/api/${listRoute}/columns`);
+      console.log(result);
+    }
+    fetchData();
+  }, [listRoute]);
+
   const searchTerm = useSearchTerm((state) => state.searchTerm);
 
-  const data = rawData.filter((rawMaterial) => {
+  const data = actualList.filter((rawMaterial) => {
     const values = Object.values(rawMaterial);
     return values.some((value: any) =>
       value.toString().toLowerCase().includes(searchTerm.toLowerCase()),
     );
   });
 
-  const columns = rawMaterialsColumns;
+  const columns = actualColumns;
 
   const rows = data.map((rawMaterial) => ({
     key: rawMaterial.id,
@@ -60,7 +83,7 @@ function Information() {
       <MoreActionsButton />
       <Card className="relative h-full bg-background/40 shadow-xl" shadow="lg">
         <CardBody>
-          <Table
+          {/* <Table
             shadow="none"
             className="h-full"
             classNames={{
@@ -73,14 +96,18 @@ function Information() {
                 <TableColumn key={column.key}>{column.label}</TableColumn>
               )}
             </TableHeader>
-            <TableBody emptyContent={"No info"} items={rows}>
+            <TableBody
+              isLoading={isLoading}
+              emptyContent={"No info"}
+              items={rows}
+            >
               {(item) => (
                 <TableRow key={item.key}>
                   {(rows) => <TableCell>{getKeyValue(item, rows)}</TableCell>}
                 </TableRow>
               )}
             </TableBody>
-          </Table>
+          </Table> */}
         </CardBody>
       </Card>
     </section>

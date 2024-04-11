@@ -13,13 +13,12 @@ import { Divider } from "@nextui-org/divider";
 import Logo from "./logo";
 import ChangeTheme from "./changeTheme";
 import { useBlurEffect } from "@/states/blurEffect";
+import { useActualList } from "@/states/actualList";
 
-interface TopNavbarProps {
-  actualSection: string;
-}
-
-function PrimaryNavbar({ actualSection }: TopNavbarProps) {
+function PrimaryNavbar() {
   const blurState = useBlurEffect((state) => state.blurState);
+  const actualSection = useActualList((state) => state.actualCategory);
+
   return (
     <Navbar className="h-[13%]">
       <NavbarBrand className="text-foreground">
