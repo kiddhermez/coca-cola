@@ -1,37 +1,39 @@
 import { Button } from "@nextui-org/button";
-import ModalBase from "../modals/modalBase";
-import { useDisclosure } from "@nextui-org/modal";
+import { useModal } from "@/states/showModal";
 
 interface ActionsButtonProps {
   icon: React.JSX.Element;
   color?: "default" | "danger";
   mobile?: boolean;
+  name: string;
+  form: React.JSX.Element;
 }
 
 function ActionsButton({
   icon,
   color = "default",
   mobile,
+  name,
+  form,
 }: ActionsButtonProps) {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
+  const { setShowModal, setModalInfo } = useModal((state) => state);
   let className = mobile ? "md:hidden" : "hidden md:flex";
   className +=
     color === "danger" ? " [&>*]:fill-black/60" : " [&>*]:fill-foreground";
 
   return (
-    <>
-      <Button
-        onPress={onOpen}
-        size="sm"
-        className={className}
-        color={color}
-        isIconOnly
-      >
-        {icon}
-      </Button>
-      <ModalBase isOpen={isOpen} onOpenChange={onOpenChange} />
-    </>
+    <Button
+      size="sm"
+      className={className}
+      color={color}
+      isIconOnly
+      onClick={() => {
+        setShowModal(true);
+        setModalInfo(name, form);
+      }}
+    >
+      {icon}
+    </Button>
   );
 }
 

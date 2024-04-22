@@ -14,12 +14,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       status: 200,
       result: {
-        data: data.map((rawMaterial) => ({
-          id: rawMaterial.id,
-          name: rawMaterial.name,
-          quantity: rawMaterial.quantity,
-          unit: rawMaterial.unit,
-          price: rawMaterial.price,
+        data: data.map(({ id, name, price, unit, quantity }) => ({
+          id,
+          name,
+          quantity: `${quantity} ${unit}`,
+          price: `$${price}`,
         })),
         total,
         page,

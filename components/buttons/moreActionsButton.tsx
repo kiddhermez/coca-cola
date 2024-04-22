@@ -15,21 +15,13 @@ const buttons = [
     name: "Añadir",
     icon: <PlusIcon width={10} />,
   },
-  {
-    name: "Filtrar",
-    icon: <FilterIcon width={10} />,
-  },
-  {
-    name: "Ordenar",
-    icon: <SortIcon width={10} />,
-  },
 ];
 
 function MoreActionsButton() {
   const { blurState, setBlurState } = useBlurEffect((state) => state, shallow);
   return (
     <Navbar
-      className="absolute bottom-0 left-auto right-0 top-auto h-fit w-fit bg-transparent p-0 has-[:focus]:z-50 md:-z-50"
+      className="absolute bottom-0 left-auto right-0 top-auto h-fit w-fit bg-transparent p-0 transition-all delay-200 has-[:focus]:z-50 has-[:focus]:delay-0 md:-z-50"
       isBlurred={false}
       isMenuOpen={blurState}
       onMenuOpenChange={(open) => setBlurState(open)}

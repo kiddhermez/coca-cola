@@ -1,18 +1,36 @@
 import { create } from "zustand";
 
 export interface ActualListState {
-  actualCategory: string;
-  listRoute: string;
-  setActualList: (value: { category: string; route: string }) => void;
+  actualCategory: Category;
+  actualList: any[];
+  isLoading: boolean;
+  setCategory: (category: Category) => void;
+  setActualList: (list: any[]) => void;
+  setIsLoading: (loading: boolean) => void;
+}
+
+interface Category {
+  category: string;
+  label: string;
 }
 
 export const useActualList = create<ActualListState>((set) => ({
-  actualCategory: "Inventario",
-  listRoute: "rawMaterial",
-  setActualList: ({ category, route }) => {
+  actualCategory: { category: "rawMaterial", label: "Inventario" },
+  actualList: [],
+  isLoading: true,
+  setCategory: (category) => {
     set({
       actualCategory: category,
-      listRoute: route,
+    });
+  },
+  setActualList: (list) => {
+    set({
+      actualList: list,
+    });
+  },
+  setIsLoading: (loading) => {
+    set({
+      isLoading: loading,
     });
   },
 }));

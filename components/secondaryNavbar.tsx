@@ -1,5 +1,5 @@
 "use client";
-import { Navbar, NavbarContent } from "@nextui-org/navbar";
+import { Navbar } from "@nextui-org/navbar";
 import React from "react";
 import {
   InventoryIcon,
@@ -24,7 +24,9 @@ const icons: { [key: string]: React.JSX.Element } = {
 };
 
 function SecondaryNavbar() {
-  const setActualList = useActualList((state) => state.setActualList);
+  const { setIsLoading, setCategory, actualCategory } = useActualList(
+    (state) => state,
+  );
   return (
     <Navbar
       className="flex flex-row px-5 md:h-full md:w-16 md:flex-col md:py-10"
@@ -35,9 +37,11 @@ function SecondaryNavbar() {
       {categories.map((category) => (
         <Tooltip key={category.name} content={category.name}>
           <Button
-            onClick={() =>
-              setActualList({ category: category.name, route: category.route })
-            }
+            onClick={() => {
+              if (category.route === actualCategory.category) return;
+              setIsLoading(true);
+              setCategory({ category: category.route, label: category.name });
+            }}
             isIconOnly
             className="h-[40px] w-[40px] rounded-full bg-transparent text-foreground hover:cursor-pointer hover:bg-foreground/70 hover:text-primary"
           >

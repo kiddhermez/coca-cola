@@ -19,8 +19,8 @@ export async function GET(request: NextRequest) {
         data: data.map((transportist) => ({
           dni: transportist.dni,
           name: transportist.person.name,
-          phone: transportist.person.phone,
-          email: transportist.person.email,
+          phone: transportist.person.phone.join(" "),
+          email: transportist.person.email.join(" "),
           license: transportist.license,
         })),
         total,

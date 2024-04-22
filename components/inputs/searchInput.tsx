@@ -43,6 +43,7 @@ function SearchInput({ className }: SearchInputProps) {
 
   return (
     <Input
+      isClearable
       size="sm"
       className="text-foreground"
       classNames={{
@@ -57,22 +58,13 @@ function SearchInput({ className }: SearchInputProps) {
         e.preventDefault();
         setBlurState(true);
       }}
-      onBlur={(e) => {
+      onBlur={async (e) => {
         e.preventDefault();
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        if (inputRef.current === document.activeElement) return;
         setBlurState(false);
       }}
       ref={inputRef}
-      endContent={
-        <button
-          className="my-auto flex items-center justify-center gap-3"
-          onFocus={(e) => {
-            setSearchTerm("");
-            e.target.blur();
-          }}
-        >
-          <SearchIcon className="my-auto fill-current opacity-50" width={20} />
-        </button>
-      }
     />
   );
 }

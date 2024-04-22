@@ -17,7 +17,7 @@ import { useActualList } from "@/states/actualList";
 
 function PrimaryNavbar() {
   const blurState = useBlurEffect((state) => state.blurState);
-  const actualSection = useActualList((state) => state.actualCategory);
+  const { label } = useActualList((state) => state.actualCategory);
 
   return (
     <Navbar className="h-[13%]">
@@ -26,7 +26,7 @@ function PrimaryNavbar() {
       </NavbarBrand>
       <NavbarContent justify="center">
         <NavbarItem className="flex gap-5">
-          <h2>{actualSection}</h2>
+          <h2>{label}</h2>
           <Divider
             orientation="vertical"
             className="h-5 bg-foreground opacity-80"

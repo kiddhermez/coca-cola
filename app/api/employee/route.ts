@@ -19,8 +19,8 @@ export async function GET(request: NextRequest) {
         data: data.map((provider) => ({
           dni: provider.dni,
           name: provider.person.name,
-          phone: provider.person.phone,
-          email: provider.person.email,
+          phone: provider.person.phone.join(" "),
+          email: provider.person.email.join(" "),
           age:
             new Date().getFullYear() -
             new Date(provider.bornDate).getFullYear(),
